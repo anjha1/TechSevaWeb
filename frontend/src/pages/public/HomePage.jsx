@@ -19,6 +19,28 @@ const HomePage = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const floatingDevicesRef = useRef(null);
 
+    // Redirect logged-in users to their dashboard
+    useEffect(() => {
+        if (user) {
+            const roleRoutes = {
+                'user': '/user-dashboard',
+                'technician': '/technician-dashboard',
+                'Superadmin': '/superadmin-dashboard',
+                'superadmin': '/superadmin-dashboard',
+                'Citymanager': '/citymanager-dashboard',
+                'citymanager': '/citymanager-dashboard',
+                'Serviceadmin': '/serviceadmin-dashboard',
+                'serviceadmin': '/serviceadmin-dashboard',
+                'Financeofficer': '/financeofficer-dashboard',
+                'financeofficer': '/financeofficer-dashboard',
+                'Supportagent': '/supportagent-dashboard',
+                'supportagent': '/supportagent-dashboard'
+            };
+            const dashboardRoute = roleRoutes[user.role] || '/user-dashboard';
+            navigate(dashboardRoute, { replace: true });
+        }
+    }, [user, navigate]);
+
     // Services data
     const services = [
         {
