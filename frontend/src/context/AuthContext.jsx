@@ -66,6 +66,11 @@ export const AuthProvider = ({ children }) => {
         setUser(prev => ({ ...prev, ...userData }));
     };
 
+    // Direct user setter for cases like Google login where we already have user data
+    const setUserData = (userData) => {
+        setUser(userData);
+    };
+
     const value = {
         user,
         loading,
@@ -74,6 +79,7 @@ export const AuthProvider = ({ children }) => {
         googleLogin,
         logout,
         updateUser,
+        setUserData,
         checkAuth
     };
 

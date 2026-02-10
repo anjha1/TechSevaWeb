@@ -29,7 +29,7 @@ const getDashboardRoute = (role) => {
 
 const LoginPage = () => {
     const navigate = useNavigate();
-    const { login, user } = useAuth();
+    const { login, user, setUserData } = useAuth();
     const { showMessage } = useMessage();
     
     const [formData, setFormData] = useState({
@@ -67,7 +67,7 @@ const LoginPage = () => {
                 if (res.data.success) {
                     const userData = res.data.data?.user;
                     if (userData) {
-                        login(userData);
+                        setUserData(userData);
                     }
                     
                     if (res.data.data?.needsPhoneUpdate) {
@@ -136,7 +136,7 @@ const LoginPage = () => {
             
             if (response.data.success) {
                 showMessage('Login successful!', 'success');
-                login(response.data.data.user);
+                setUserData(response.data.data.user);
                 
                 // Check for prefill data
                 const prefillData = sessionStorage.getItem('prefillBookingData');
