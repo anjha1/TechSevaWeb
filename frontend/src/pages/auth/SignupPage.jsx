@@ -1,14 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContext';
 import { useMessage } from '../../components/MessageBox';
 import { ButtonLoader } from '../../components/LoadingSpinner';
 import OTPInput from '../../components/OTPInput';
 import api from '../../services/api';
 import '../../styles/Auth.css';
 
+// Helper function to get the correct dashboard route based on role
+const getDashboardRoute = (role) => {
+    const roleRoutes = {
+        'user': '/user-dashboard',
+        'technician': '/technician-dashboard',
+        'superadmin': '/superadmin-dashboard',
+        'Superadmin': '/superadmin-dashboard'
+    };
+    return roleRoutes[role] || '/user-dashboard';
+};
+
 const SignupPage = () => {
     const navigate = useNavigate();
+    const { user } = useAuth();
     const { showMessage } = useMessage();
+
+    // Redirect if already logged in
+    useEffect(() => {
+        if (user) {
+            const dashboardRoute = getDashboardRoute(user.role);
+            navigate(dashboardRoute, { replace: true });
+        }
+    }, [user, navigate]);
     
     const [step, setStep] = useState('form'); // form, otp
     const [formData, setFormData] = useState({

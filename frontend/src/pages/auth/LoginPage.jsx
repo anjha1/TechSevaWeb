@@ -29,7 +29,7 @@ const getDashboardRoute = (role) => {
 
 const LoginPage = () => {
     const navigate = useNavigate();
-    const { login } = useAuth();
+    const { login, user } = useAuth();
     const { showMessage } = useMessage();
     
     const [formData, setFormData] = useState({
@@ -41,6 +41,14 @@ const LoginPage = () => {
     const [loading, setLoading] = useState(false);
     const googleBtnRef = useRef(null);
     const formDataRef = useRef(formData);
+
+    // Redirect if already logged in
+    useEffect(() => {
+        if (user) {
+            const dashboardRoute = getDashboardRoute(user.role);
+            navigate(dashboardRoute, { replace: true });
+        }
+    }, [user, navigate]);
 
     // Keep ref synced with formData
     useEffect(() => {

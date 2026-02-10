@@ -266,8 +266,10 @@ const login = async (req, res) => {
         logger.info('AUTH', 'User logged in', { userId: user._id, role: user.role });
 
         return response.success(res, 'Login successful', {
-            redirect: getRedirectUrl(user.role),
-            user: req.session.user
+            data: { 
+                redirect: getRedirectUrl(user.role),
+                user: req.session.user
+            }
         });
 
     } catch (err) {
