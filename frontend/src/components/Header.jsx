@@ -35,7 +35,7 @@ const Header = () => {
                 </li>
                 <li className="nav-item">
                     {user ? (
-                        <Link to={`/${user.role}`} className="dashboard-link">
+                        <Link to={`/${user.role}-dashboard`} className="dashboard-link">
                             Dashboard
                         </Link>
                     ) : (

@@ -3,7 +3,7 @@
  * User authentication with email/password and Google OAuth
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -15,8 +15,15 @@ const Login = () => {
     });
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
-    const { login, googleLogin } = useAuth();
+    const { login, googleLogin, user } = useAuth();
     const navigate = useNavigate();
+
+    // Redirect if already logged in
+    useEffect(() => {
+        if (user) {
+            navigate(`/${user.role}-dashboard`, { replace: true });
+        }
+    }, [user, navigate]);
 
     const roles = [
         { value: 'user', label: 'Customer' },

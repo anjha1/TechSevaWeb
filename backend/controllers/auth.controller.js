@@ -22,13 +22,13 @@ const isAnAdminRole = (role) => User.isAdminRole(role);
 // Get redirect URL based on role
 const getRedirectUrl = (role) => {
     const routes = {
-        'user': '/user',
-        'technician': '/technician',
-        'Superadmin': '/superadmin',
-        'Citymanager': '/citymanager',
-        'Serviceadmin': '/serviceadmin',
-        'Financeofficer': '/financeofficer',
-        'Supportagent': '/supportagent'
+        'user': '/user-dashboard',
+        'technician': '/technician-dashboard',
+        'Superadmin': '/superadmin-dashboard',
+        'Citymanager': '/citymanager-dashboard',
+        'Serviceadmin': '/serviceadmin-dashboard',
+        'Financeofficer': '/financeofficer-dashboard',
+        'Supportagent': '/supportagent-dashboard'
     };
     return routes[role] || '/';
 };
