@@ -1,0 +1,391 @@
+/* ==================== */
+/* Diagnosis Page Styles */
+/* ==================== */
+
+.diagnosis-page {
+    min-height: 100vh;
+    background-color: #f5f7fb;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.diagnosis-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* Header */
+.diagnosis-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.back-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: #333;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s;
+}
+
+.back-btn:hover {
+    background: #4361ee;
+    color: white;
+}
+
+.diagnosis-header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Job Summary */
+.job-summary {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.job-summary h3 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    color: #666;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.summary-item i {
+    width: 40px;
+    height: 40px;
+    background: rgba(67, 97, 238, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4361ee;
+}
+
+.summary-item span {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.summary-item strong {
+    display: block;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.issue-description {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.issue-description h4 {
+    margin: 0 0 0.5rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.issue-description p {
+    margin: 0;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Diagnosis Form */
+.diagnosis-form {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.form-section {
+    padding: 1.5rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+}
+
+.form-section h3 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4361ee;
+}
+
+/* Parts Input */
+.parts-input {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.parts-input input {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.parts-input input:first-child {
+    flex: 2;
+}
+
+.parts-input input:nth-child(2) {
+    flex: 1;
+}
+
+.add-part-btn {
+    width: 48px;
+    background: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-part-btn:hover {
+    background: #3730a3;
+}
+
+/* Parts List */
+.parts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.part-item {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.part-name {
+    flex: 1;
+    color: #333;
+}
+
+.part-price {
+    font-weight: 600;
+    color: #4361ee;
+    margin-right: 1rem;
+}
+
+.remove-part-btn {
+    width: 28px;
+    height: 28px;
+    background: rgba(239, 68, 68, 0.1);
+    color: #ef4444;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+
+.remove-part-btn:hover {
+    background: #ef4444;
+    color: white;
+}
+
+/* Cost Summary */
+.cost-summary {
+    padding: 1.5rem;
+    background: #f8f9fa;
+}
+
+.cost-summary h3 {
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.cost-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.cost-row {
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+}
+
+.cost-row.total {
+    padding-top: 0.75rem;
+    border-top: 1px solid #e0e0e0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.cost-row.total span:last-child {
+    color: #4361ee;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    padding: 1.5rem;
+}
+
+.btn-primary,
+.btn-secondary {
+    padding: 0.875rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: #4361ee;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #3730a3;
+}
+
+.btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #d0d0d0;
+}
+
+/* Error State */
+.error-state {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+}
+
+.error-state i {
+    font-size: 4rem;
+    color: #f59e0b;
+    margin-bottom: 1rem;
+}
+
+.error-state p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.error-state button {
+    background: #4361ee;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .parts-input {
+        flex-wrap: wrap;
+    }
+
+    .parts-input input:first-child {
+        flex: none;
+        width: 100%;
+    }
+
+    .parts-input input:nth-child(2) {
+        flex: 1;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base layer customizations */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-gradient-to-br from-slate-50 to-blue-50;
+  }
+  
+  .dark body {
+    @apply bg-gradient-to-br from-slate-900 to-slate-800;
+  }
+}
+
+/* Component layer - Reusable classes */
+@layer components {
+  /* Glass morphism effect */
+  .glass {
+    @apply bg-white/70 dark:bg-slate-800/70 backdrop-blur-lg border border-white/20 dark:border-slate-700/50;
+  }
+  
+  .glass-card {
+    @apply glass rounded-2xl shadow-soft p-6;
+  }
+  
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-600 to-accent-600;
+  }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600;
+  }
+  
+  .bg-gradient-accent {
+    @apply bg-gradient-to-r from-accent-500 to-accent-600;
+  }
+  
+  /* Button base */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .btn-primary {
+    @apply btn bg-gradient-to-r from-primary-500 to-primary-600 text-white hover:from-primary-600 hover:to-primary-700 focus:ring-primary-500 shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/30 hover:-translate-y-0.5;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-600 focus:ring-slate-400;
+  }
+  
+  .btn-success {
+    @apply btn bg-gradient-to-r from-emerald-500 to-emerald-600 text-white hover:from-emerald-600 hover:to-emerald-700 focus:ring-emerald-500 shadow-lg shadow-emerald-500/25;
+  }
+  
+  .btn-danger {
+    @apply btn bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 focus:ring-red-500 shadow-lg shadow-red-500/25;
+  }
+  
+  .btn-warning {
+    @apply btn bg-gradient-to-r from-amber-500 to-amber-600 text-white hover:from-amber-600 hover:to-amber-700 focus:ring-amber-500 shadow-lg shadow-amber-500/25;
+  }
+  
+  /* Input styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200;
+  }
+  
+  .select {
+    @apply input appearance-none cursor-pointer;
+  }
+  
+  .textarea {
+    @apply input resize-none min-h-[100px];
+  }
+  
+  /* Card variations */
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-2xl shadow-card p-6 transition-all duration-300;
+  }
+  
+  .card-hover {
+    @apply card hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  /* Status badges */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  
+  .badge-success {
+    @apply badge bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400;
+  }
+  
+  .badge-warning {
+    @apply badge bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400;
+  }
+  
+  .badge-danger {
+    @apply badge bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-400;
+  }
+  
+  .badge-info {
+    @apply badge bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-400;
+  }
+  
+  .badge-primary {
+    @apply badge bg-primary-100 dark:bg-primary-900/30 text-primary-700 dark:text-primary-400;
+  }
+  
+  /* Menu items */
+  .menu-item {
+    @apply flex items-center gap-4 w-full px-4 py-3 rounded-xl text-left text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-all duration-200;
+  }
+  
+  .menu-item-active {
+    @apply menu-item bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 font-medium;
+  }
+  
+  /* Tab bar */
+  .tab-item {
+    @apply flex flex-col items-center justify-center gap-1 flex-1 py-2 text-slate-500 dark:text-slate-400 transition-all duration-200;
+  }
+  
+  .tab-item-active {
+    @apply tab-item text-primary-600 dark:text-primary-400;
+  }
+}
+
+/* Utilities layer */
+@layer utilities {
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}

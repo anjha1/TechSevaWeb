@@ -1,0 +1,41 @@
+/* OTP Input Styles */
+.otp-input-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.otp-digit {
+    width: 50px;
+    height: 55px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 600;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.otp-digit:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.otp-digit:valid {
+    border-color: #28a745;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .otp-input-container {
+        gap: 6px;
+    }
+    
+    .otp-digit {
+        width: 42px;
+        height: 48px;
+        font-size: 1.3em;
+    }
+}

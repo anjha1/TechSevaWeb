@@ -1,0 +1,211 @@
+/* ==================== */
+/* Phone Update Styles */
+/* ==================== */
+
+.phone-update-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fb 0%, #e8f0fe 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.phone-update-container {
+    width: 100%;
+    max-width: 420px;
+}
+
+.phone-update-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.phone-update-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.phone-update-header .back-btn {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.phone-update-header .back-btn:hover {
+    background: #4361ee;
+    color: white;
+}
+
+.phone-update-header h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: #333;
+}
+
+/* Phone Icon */
+.phone-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #4361ee, #3730a3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.phone-icon.success {
+    background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.phone-icon i {
+    font-size: 2rem;
+    color: white;
+}
+
+/* Description */
+.description {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.description strong {
+    color: #333;
+}
+
+/* Phone Input */
+.phone-input-wrapper {
+    display: flex;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s;
+}
+
+.phone-input-wrapper:focus-within {
+    border-color: #4361ee;
+}
+
+.country-code {
+    padding: 1rem;
+    background: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #e0e0e0;
+}
+
+.phone-input-wrapper input {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    font-size: 1rem;
+    letter-spacing: 1px;
+}
+
+.phone-input-wrapper input:focus {
+    outline: none;
+}
+
+/* Submit Button */
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #4361ee, #3730a3);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.submit-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(67, 97, 238, 0.4);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Change Number Button */
+.change-number-btn {
+    display: block;
+    margin: 0 auto 1.5rem;
+    background: none;
+    border: none;
+    color: #4361ee;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.change-number-btn:hover {
+    text-decoration: underline;
+}
+
+/* OTP Container */
+.otp-container {
+    margin-bottom: 1.5rem;
+}
+
+/* Resend Section */
+.resend-section {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.timer {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.resend-btn {
+    background: none;
+    border: none;
+    color: #4361ee;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.resend-btn:hover {
+    text-decoration: underline;
+}
+
+.resend-btn:disabled {
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .phone-update-page {
+        padding: 1rem;
+    }
+
+    .phone-update-card {
+        padding: 1.5rem;
+    }
+}
