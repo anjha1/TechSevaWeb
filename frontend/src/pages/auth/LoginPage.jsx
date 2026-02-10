@@ -72,11 +72,11 @@ const LoginPage = () => {
                     
                     if (res.data.data?.needsPhoneUpdate) {
                         showMessage('Please add your phone number to complete your profile.', 'info');
-                        navigate('/phone-update');
+                        navigate('/phone-update', { replace: true });
                     } else {
                         showMessage('Google login successful!', 'success');
                         const dashboardRoute = getDashboardRoute(userData?.role);
-                        navigate(dashboardRoute);
+                        setTimeout(() => navigate(dashboardRoute, { replace: true }), 100);
                     }
                 }
             } catch (error) {
@@ -142,10 +142,10 @@ const LoginPage = () => {
                 const prefillData = sessionStorage.getItem('prefillBookingData');
                 if (prefillData) {
                     sessionStorage.removeItem('prefillBookingData');
-                    navigate('/user-dashboard');
+                    setTimeout(() => navigate('/user-dashboard', { replace: true }), 100);
                 } else {
                     const dashboardRoute = getDashboardRoute(response.data.data.user.role);
-                    navigate(dashboardRoute);
+                    setTimeout(() => navigate(dashboardRoute, { replace: true }), 100);
                 }
             }
         } catch (error) {
